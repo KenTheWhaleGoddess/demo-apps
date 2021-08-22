@@ -37,9 +37,11 @@ async function renderRugs() {
 
 function addRug(rug) {
   var ul = document.getElementById("rugs");
+  var li = document.createElement("li");
+
   var img = document.createElement("img");
   img.src = rug;
-  ul.appendChild(document.createTextNode(rug));
+  ul.appendChild(img);
 }
 
 
