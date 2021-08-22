@@ -28,12 +28,15 @@ async function renderRugs() {
 
 	// create a query on the EthTransactions collection
 	console.log(json);
-	console.log(openseaRugs.assets);
 
-    openseaRugs.assets.forEach((i) => {
+	const assets = openseaRugs.assets;
+	console.log(openseaRugs);
+	console.log(assets);
+
+    assets.forEach((i) => {
 	    console.log(i.image_url);
 	    addRug(i.image_url, i.name)
-	})
+	});
 
 	$('#rugs').show();
 }
