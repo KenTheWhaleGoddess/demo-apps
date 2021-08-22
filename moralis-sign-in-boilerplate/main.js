@@ -1,7 +1,3 @@
-
-from web3 import Web3
-from web3._utils.events import get_event_data
-
 // Application id from moralis.io
 Moralis.initialize('igDYNSIRB7leqHRpnUuNPfplY1fn0Y60fp5AM8zV');
 //Server url from moralis.io
