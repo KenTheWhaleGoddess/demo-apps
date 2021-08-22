@@ -1,3 +1,7 @@
+
+from web3 import Web3
+from web3._utils.events import get_event_data
+
 // Application id from moralis.io
 Moralis.initialize('igDYNSIRB7leqHRpnUuNPfplY1fn0Y60fp5AM8zV');
 //Server url from moralis.io
@@ -21,6 +25,14 @@ async function hideLogin() {
 }
 
 async function renderRugs() {
+	const user = Moralis.User.current();
+	const userAddress = user.get("ethAddress");
+
+	// create a query on the EthTransactions collection
+	const collection = "8bit-rugs";
+	const query = new Moralis.Query(collection);
+	const result = query.find();
+	print(result);
 	$('#rugs').show();
 }
 
