@@ -29,8 +29,7 @@ async function renderRugs() {
 	// create a query on the EthTransactions collection
 	console.log(json);
 
-	const assets = openseaRugs.assets;
-	console.log(openseaRugs);
+	const assets = json.assets;
 	console.log(assets);
 
     assets.forEach((i) => {
