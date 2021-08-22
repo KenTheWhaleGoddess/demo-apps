@@ -28,6 +28,7 @@ async function renderRugs() {
 
 	// create a query on the EthTransactions collection
 	console.log(json);
+	console.log(openseaRugs.assets);
 
 	$.each(openseaRugs.assets, function(i, v) {
 	    console.log(v.image_url);
