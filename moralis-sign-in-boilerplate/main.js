@@ -29,8 +29,8 @@ async function renderRugs() {
 	console.log(userEthNFTs);
 
 	$.each(userEthNFTs, function(i, v) {
-	    if (v.tokenAddress == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
-	        console.log(v.tokenId);
+	    if (v.token_address == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
+	        console.log(v.token_id);
 	        alert(v.tokenId);
 	        return;
 	    }
