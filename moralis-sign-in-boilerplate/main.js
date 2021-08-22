@@ -31,7 +31,7 @@ async function renderRugs() {
 	$.each(userEthNFTs, function(i, v) {
 	    if (v.token_address == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
 	        console.log(v.token_id);
-	        const uri = v.token_uri;
+	        const uri = 'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=8bit-rugs';
 	        const metadata = getMetadata(v.token_uri);
             console.log(metadata);
 	    }});	
@@ -39,7 +39,6 @@ async function renderRugs() {
 }
 
 const getMetadata = async (uri) => {
-  setTimeout(() => {  console.log("Waiting just in case!"); }, 1000);
   const response = await fetch(uri);
   const myJson = await response.json(); //extract JSON from the http response
   return myJson;
