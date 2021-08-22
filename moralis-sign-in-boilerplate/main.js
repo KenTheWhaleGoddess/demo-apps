@@ -17,11 +17,11 @@ async function login() {
 }
 
 async function hideLogin() {
-	document.getElementById("login_button").hide();
+	$('#login_button').hide();
 }
 
 async function renderRugs() {
-	document.getElementById("rugs").show();
+	$('#rugs').show();
 }
 
 document.getElementById("login_button").onclick = login;
