@@ -1,7 +1,7 @@
 // Application id from moralis.io
-Moralis.initialize('YOUR_APP_ID');
+Moralis.initialize('igDYNSIRB7leqHRpnUuNPfplY1fn0Y60fp5AM8zV');
 //Server url from moralis.io
-Moralis.serverURL = 'YOUR_SERVER_URL';
+Moralis.serverURL = 'https://e1qealego843.moralisweb3.com:2053/server';
 
 const authButton = document.getElementById('btn-auth');
 const enableButton = document.getElementById('btn-enable');
