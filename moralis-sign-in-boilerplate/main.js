@@ -29,7 +29,7 @@ async function renderRugs() {
 	// create a query on the EthTransactions collection
 	console.log(json);
 
-	$.each(openseaRugs, function(i, v) {
+	$.each(openseaRugs.assets, function(i, v) {
 	    console.log(v.image_url);
 	    addRug(v.image_url)
 	})
@@ -41,7 +41,7 @@ function addRug(rug, description) {
   var ul = document.getElementById("rugs");
   var img = document.createElement("img");
   var li = document.createElement("li");
-  
+
   img.src = rug;
   li.innerHtml = description;
 
