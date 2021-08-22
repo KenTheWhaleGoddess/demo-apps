@@ -20,4 +20,8 @@ async function hideLogin() {
 	document.getElementById("login_button").hide();
 }
 
+async function renderRugs() {
+	document.getElementById("rugs").show();
+}
+
 document.getElementById("login_button").onclick = login;
