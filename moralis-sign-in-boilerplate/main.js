@@ -21,22 +21,26 @@ async function hideLogin() {
 }
 
 async function renderRugs() {
-
 	const user = Moralis.User.current();
 	const userAddress = user.get("ethAddress");
 	const openseaRugs = await fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=8bit-rugs&owner=' + userAddress);
 
 	// create a query on the EthTransactions collection
-	const userEthNFTs = await Moralis.Web3.getNFTs();
-	console.log(userEthNFTs);
 	console.log(openseaRugs.json());
 
-	$.each(userEthNFTs, function(i, v) {
-	    if (v.token_address == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
-	        console.log(v.token_id);
-	        const uri = v.token_uri;
-	    }});	
+	$.each(openseaRugs, function(i, v) {
+	    console.log(v.image_url);
+	    addRug(v.image_url)
+
 	$('#rugs').show();
 }
+
+function addRug(rug) {
+  var ul = document.getElementById("rugs");
+  var img = document.createElement("img");
+  img.src = rug;
+  ul.appendChild(document.createTextNode(rug));
+}
+
 
 document.getElementById("login_button").onclick = login;
