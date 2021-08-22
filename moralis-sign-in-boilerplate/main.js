@@ -23,7 +23,7 @@ async function hideLogin() {
 async function renderRugs() {
 	const user = Moralis.User.current();
 	const userAddress = user.get("ethAddress");
-	const openseaRugs = await fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=8bit-rugs&owner=' + userAddress);
+	const openseaRugs = fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=8bit-rugs&owner=' + userAddress);
 
 	// create a query on the EthTransactions collection
 	console.log(openseaRugs.json());
