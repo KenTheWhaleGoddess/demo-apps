@@ -32,8 +32,10 @@ async function renderRugs() {
 	    if (v.token_address == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
 	        console.log(v.token_id);
 	        const uri = v.token_uri;
-	        const result = await (fetch(uri)).json();
-	        console.log(result);
+	        const result = await fetch(uri);
+	        const json = result.json();
+	        setTimeout(() => { console.log("waiting!"); }, 1000);
+	        console.log(json);
 	    }});	
 	$('#rugs').show();
 }
