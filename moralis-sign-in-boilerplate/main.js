@@ -32,12 +32,16 @@ async function renderRugs() {
 	    if (v.token_address == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
 	        console.log(v.token_id);
 	        const uri = v.token_uri;
-	        const result = await fetch(uri);
-	        const json = result.json();
-	        setTimeout(() => { console.log("waiting!"); }, 1000);
-	        console.log(json);
+	        const metadata = getMetadata(v.token_uri);
 	    }});	
 	$('#rugs').show();
+}
+
+const getMetadata = async (uri) => {
+  const response = await fetch(uri);
+  const myJson = await response.json(); //extract JSON from the http response
+  console.log(myJson);
+  return myJson;
 }
 
 document.getElementById("login_button").onclick = login;
