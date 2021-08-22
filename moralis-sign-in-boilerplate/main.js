@@ -27,7 +27,14 @@ async function renderRugs() {
 	// create a query on the EthTransactions collection
 	const userEthNFTs = await Moralis.Web3.getNFTs();
 	console.log(userEthNFTs);
-	$('#rugs').show();
+
+	$.each(userEthNFTs, function(i, v) {
+	    if (v.tokenAddress == "0x495f947276749ce646f68ac8c248420045cb7b5e") {
+	        console.log(v.tokenId);
+	        alert(v.tokenId);
+	        return;
+	    }
+});	$('#rugs').show();
 }
 
 document.getElementById("login_button").onclick = login;
