@@ -23,10 +23,11 @@ async function hideLogin() {
 async function renderRugs() {
 	const user = Moralis.User.current();
 	const userAddress = user.get("ethAddress");
-	const openseaRugs = fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=8bit-rugs&owner=' + userAddress);
+	const openseaRugs = await fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=8bit-rugs&owner=' + userAddress);
+	const json = await openseaRugs.json();
 
 	// create a query on the EthTransactions collection
-	console.log(openseaRugs.json());
+	console.log(json);
 
 	$.each(openseaRugs, function(i, v) {
 	    console.log(v.image_url);
@@ -36,11 +37,14 @@ async function renderRugs() {
 	$('#rugs').show();
 }
 
-function addRug(rug) {
+function addRug(rug, description) {
   var ul = document.getElementById("rugs");
   var img = document.createElement("img");
+  var li = document.createElement("li");
+  li.createTextNode(description);
   img.src = rug;
   ul.appendChild(img);
+  ul.appendChild(li);
 }
 
 
