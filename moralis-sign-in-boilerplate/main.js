@@ -31,14 +31,13 @@ async function renderRugs() {
 	$.each(openseaRugs, function(i, v) {
 	    console.log(v.image_url);
 	    addRug(v.image_url)
+	}
 
 	$('#rugs').show();
 }
 
 function addRug(rug) {
   var ul = document.getElementById("rugs");
-  var li = document.createElement("li");
-
   var img = document.createElement("img");
   img.src = rug;
   ul.appendChild(img);
