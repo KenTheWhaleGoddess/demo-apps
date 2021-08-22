@@ -38,7 +38,7 @@ async function renderRugs() {
 }
 
 const getMetadata = async (uri) => {
-  const response = await fetch('uri');
+  const response = await fetch(uri);
   const myJson = await response.json(); //extract JSON from the http response
   console.log(myJson);
   return myJson;
