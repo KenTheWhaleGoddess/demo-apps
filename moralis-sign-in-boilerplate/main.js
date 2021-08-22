@@ -41,8 +41,10 @@ function addRug(rug, description) {
   var ul = document.getElementById("rugs");
   var img = document.createElement("img");
   var li = document.createElement("li");
-  li.createTextNode(description);
+  
   img.src = rug;
+  li.innerHtml = description;
+
   ul.appendChild(img);
   ul.appendChild(li);
 }
