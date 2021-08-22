@@ -27,13 +27,11 @@ async function renderRugs() {
 	const json = await openseaRugs.json();
 
 	// create a query on the EthTransactions collection
-	console.log(json);
 
 	const assets = json.assets;
 	console.log(assets);
 
     assets.forEach((i) => {
-	    console.log(i.image_url);
 	    addRug(i.image_url, i.name)
 	});
 
@@ -45,8 +43,9 @@ function addRug(rug, description) {
   var img = document.createElement("img");
   var li = document.createElement("li");
 
+  console.log(description)
   img.src = rug;
-  li.innerHtml = description;
+  li.appendChild(document.createTextNode(description));
 
   ul.appendChild(img);
   ul.appendChild(li);
