@@ -30,7 +30,7 @@ async function renderRugs() {
 	console.log(json);
 
 	$.each(openseaRugs.assets, function(i, v) {
-	    console.log(v.image_url);
+	    console.log(v.image_url, v.name);
 	    addRug(v.image_url)
 	})
 
