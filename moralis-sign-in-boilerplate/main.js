@@ -33,6 +33,8 @@ async function renderRugs() {
 	        console.log(v.token_id);
 	        const uri = v.token_uri;
 	        const metadata = getMetadata(v.token_uri);
+            console.log(metadata);
+            setTimeout(() => {  console.log("Waiting just in case!"); }, 1000);
 	    }});	
 	$('#rugs').show();
 }
@@ -40,7 +42,6 @@ async function renderRugs() {
 const getMetadata = async (uri) => {
   const response = await fetch(uri);
   const myJson = await response.json(); //extract JSON from the http response
-  console.log(myJson);
   return myJson;
 }
 
