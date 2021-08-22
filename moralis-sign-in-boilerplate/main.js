@@ -25,10 +25,8 @@ async function renderRugs() {
 	const userAddress = user.get("ethAddress");
 
 	// create a query on the EthTransactions collection
-	const collection = "8bit-rugs";
-	const query = new Moralis.Query(collection);
-	const result = query.find();
-	print(result);
+	const userEthNFTs = await Moralis.Web3.getNFTs();
+	console.log(userEthNFTs);
 	$('#rugs').show();
 }
 
